@@ -4,6 +4,24 @@ Instructions for AI coding assistants and developers working on the hermes-agent
 
 **Never give up on the right solution.**
 
+## Adam Workspace Git Boundary
+
+This local checkout may have both an upstream remote (`NousResearch/hermes-agent`)
+and Adam's fork/internal remote. For Adam's workspace, the default target is
+Adam's repo/fork/internal workflow — **not** upstream Nous.
+
+Before any commit, push, branch publication, or PR:
+
+1. Run `git rev-parse --show-toplevel`, `git branch --show-current`, and
+   `git remote -v`.
+2. Confirm the push/PR target is Adam's intended repo/fork/internal repository.
+3. Do not push to or open PRs against `NousResearch/hermes-agent` unless Adam
+   explicitly says the task is to contribute upstream to Nous.
+
+If the requested work is local Hermes configuration, skills, AGENTS docs, trading
+workflow, or Adam-specific automation, it belongs in Adam's local/trading repos
+or fork/internal repo. It does not belong in an upstream Nous PR by default.
+
 ## What Hermes Is
 
 Hermes is a personal AI agent that runs the same agent core across a CLI, a
